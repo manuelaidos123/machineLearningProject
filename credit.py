@@ -154,7 +154,9 @@ if __name__ == "__main__":
             for percentagem in percentagens:
                 descriptive_train, descriptive_test, target_train, target_test = func_precision(descriptive, target, percentagem, columns)
                 accuracy, matrix = func_model(descriptive_train, descriptive_test, target_train, target_test)
-                print(f"[{percentagem:.2%}]: accuracy: {accuracy:.4f}, matrix:")
-
-            print()
+                print(f"[{percentagem:.2%}]: accuracy: {accuracy:.4f}")
+                print("Confusion Matrix:")
+                print(matrix)
+                print()
+    print("Finished.")
 
