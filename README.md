@@ -42,7 +42,8 @@ The datasets were preprocessed using different techniques to assess their impact
 
 1. Clone the repository:
 
-   git clone https://github.com/your-username/your-repo.git
+   git clone [https://github.com/your-username/your-repo.git](https://github.com/manuelaidos123/machineLearningProject/tree/master)
+
    cd your-repo
 
 3. Run the Project   
