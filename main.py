@@ -45,7 +45,6 @@ def adult_dataset():
                   "marital-status", "occupation", "relationship", "race",
                   "sex", "native-country", "income" ]
 
-
     adult_file = "./adult/adult.data"
     df = pd.read_csv(adult_file,names=cols, header=None)
     for x in df.columns:
