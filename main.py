@@ -52,7 +52,6 @@ def adult_dataset():
         df.drop(df[x][df[x]==" ?"].index, inplace=True)
         if df[x].dtypes == "object": df[x] = df[x].str.replace("-", "")
 
-    # return df
     return df[order_col]
 
 def label(desc, targ, percentagem, cols):
