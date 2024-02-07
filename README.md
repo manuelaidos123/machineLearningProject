@@ -38,17 +38,17 @@ The datasets were preprocessed using different techniques to assess their impact
 - **labelEncoder + one-hot:** Combining label encoding and one-hot encoding.
 - **labelencoder + one-hot + standard:** Combining label encoding, one-hot encoding, and standard scaling.
 
+## Installed Packages
+
+Package            Version
+------------------ -----------
+numpy              1.21.6
+pandas             1.3.5
+scikit-learn       1.0.2
+
 ## Running the Code
 
-1. Clone the repository:
-
-   git clone [https://github.com/your-username/your-repo.git](https://github.com/manuelaidos123/machineLearningProject/tree/master)
-
-   cd your-repo
-
-3. Run the Project   
-
-   pip install -r requirements.txt
+1. Run the Project   
 
    python main.py
    
