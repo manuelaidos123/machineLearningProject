@@ -8,8 +8,6 @@ COPY requeriments.txt ./
 
 RUN pip install -r requeriments.txt
 
-RUN pip install pyarrow
-
 # Copy the Python script
 COPY . .
 
