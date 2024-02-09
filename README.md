@@ -38,13 +38,9 @@ The datasets were preprocessed using different techniques to assess their impact
 - **labelEncoder + one-hot:** Combining label encoding and one-hot encoding.
 - **labelencoder + one-hot + standard:** Combining label encoding, one-hot encoding, and standard scaling.
 
-## Installed Packages
+## Installing Packages
 
-Package            Version
------------------- -----------
-numpy              1.21.6
-pandas             1.3.5
-scikit-learn       1.0.2
+pip install -r requeriments.txt
 
 ## Running the Code
 
