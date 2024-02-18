@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: python-app-service
+spec:
+  selector:
+    app: python-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-app
+  template:
+    metadata:
+      labels:
+        app: python-app
+    spec:
+      containers:
+      - name: python-app
+        image: <your-docker-image>
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: adult-data-volume
+          mountPath: "/usr/src/app/adult"
+        - name: crx-data-volume
+          mountPath: "/usr/src/app/credit"
+      volumes:
+      - name: adult-data-volume
+        configMap:
+          name: adult-data
+      - name: crx-data-volume
+        configMap:
+          name: crx-data
