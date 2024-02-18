@@ -24,7 +24,7 @@ class TestCreditDataset(unittest.TestCase):
 
         # Check if columns match and data types are correct
         self.assertListEqual(list(self.df.columns), expected_columns, "Incorrect columns")
-        self.assertDictEqual(self.df.dtypes.to_dict(), expected_data_types, "Incorrect data types")
+        self.assertDictEqual(self.df.dtypes.apply(lambda x: x.name).to_dict(), expected_data_types, "Incorrect data types")
 
 if __name__ == '__main__':
     unittest.main()
