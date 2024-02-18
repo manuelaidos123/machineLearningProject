@@ -1,18 +1,20 @@
-# Base image
-FROM python:latest
+# Use an official Python runtime as a parent image
+FROM python:3.8-slim
 
-# Working directory
-WORKDIR /app
+# Set the working directory in the container
+WORKDIR /usr/src/app
 
-COPY requeriments.txt ./
-
-RUN pip install -r requeriments.txt
-
-# Copy the Python script
+# Copy the current directory contents into the container at /usr/src/app
 COPY . .
 
-VOLUME ["/credit/crx.data:/app/file1"]
-VOLUME ["/adult/adult.data:/app/file2"]
+# Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Command to run the script
-CMD ["python", "main.py", "--data_dir1", "/app/file1", "--data_dir2", "/app/file2"]
+# Make port 80 available to the world outside this container
+EXPOSE 80
+
+# Define environment variable
+ENV NAME World
+
+# Run main.py when the container launches
+CMD ["python", "./main.py"]
