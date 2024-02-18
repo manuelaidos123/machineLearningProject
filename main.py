@@ -183,6 +183,7 @@ if __name__ == "__main__":
             if df[cols].dtypes == 'object': columns.append(i)
 
         encoder = LabelEncoder()
+        target = np.array(target).ravel()  # Use np.array to explicitly convert to a NumPy array
         target = encoder.fit_transform(target)
 
 
